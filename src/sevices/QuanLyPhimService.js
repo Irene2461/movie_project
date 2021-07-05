@@ -23,6 +23,11 @@ export class QuanLyPhimService extends baseService {
     timKiemPhim = (tenPhim) => {
         return this.get2(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01&tenPhim=${tenPhim}`)
     }
+
+    themLichChieu = (data) => {
+        return this.post('/api/QuanLyDatVe/TaoLichChieu',data);
+    }
+    
 }
 
 export const quanLyPhimService = new QuanLyPhimService();

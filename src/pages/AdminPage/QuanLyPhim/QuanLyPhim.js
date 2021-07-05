@@ -43,7 +43,7 @@ export default function QuanLyPhim(props) {
           key: 'action',
           render: (text,record)=>(
             <Space size="middle">
-                <NavLink to="/">Tao lich chieu</NavLink>
+                <NavLink to="/admin/addlichchieu">Tao lich chieu</NavLink>
                 <NavLink to="/">Chinh sua</NavLink>
             </Space>
           )      

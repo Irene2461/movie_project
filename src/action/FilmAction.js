@@ -98,3 +98,14 @@ export const timKiemPhimAction = (tenPhim) => {
         }
     }
 }
+
+export const themLichChieuAction = (formData) =>{
+    return async dispatch => {
+        try{
+            const result = await quanLyPhimService.themLichChieu(formData);
+            alert('Thêm lịch chiếu thành công !');
+        }catch(error){
+            console.log(error.response?.data);
+        }
+    }
+}

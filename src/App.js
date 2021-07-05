@@ -14,6 +14,7 @@ import { AdminTemplate } from './Templates/AdminTemplate/AdminTemplate';
 import AdminPage from './pages/AdminPage/AdminPage';
 import QuanLyPhim from './pages/AdminPage/QuanLyPhim/QuanLyPhim';
 import ThemPhim from './pages/AdminPage/QuanLyPhim/ThemPhim';
+import ThemLichChieu from './pages/AdminPage/QuanLyLichChieu/ThemLichChieu';
 import UserAccount from './pages/UserAccount/UserAccount';
 import UserHistory from './pages/UserAccount/UserHistory/UserHistory';
 import Search from './pages/Search/Search';
@@ -36,6 +37,7 @@ function App() {
         <AdminTemplate exact path="/admin" component={AdminPage}/>
         <AdminTemplate exact path="/admin/films" component={QuanLyPhim}/>
         <AdminTemplate exact path="/admin/addfilm" component={ThemPhim}/>
+        <AdminTemplate exact path="/admin/addlichchieu" component={ThemLichChieu} />
         <HomeTemplate component={Homes}/>
       </Switch>
     </Router>
