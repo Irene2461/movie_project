@@ -2,7 +2,7 @@ import axios from 'axios'
 import { quanLyPhimService } from '../sevices/QuanLyPhimService';
 import { ACCESSTOKEN } from '../util/setting';
 import { displayLoadingActon, hideLoadingActon } from './LoadingAction';
-import { SET_CHI_TIET_PHIM_THEO_NGAY, SET_CHI_TIET_PHONG_VE, SET_FILM, SET_FILM_DETAIL,TIM_KIEM_PHIM } from './types/FilmType';
+import { SET_CHI_TIET_CUM_RAP, SET_CHI_TIET_PHIM_THEO_NGAY, SET_CHI_TIET_PHONG_VE, SET_FILM, SET_FILM_DETAIL,TIM_KIEM_PHIM } from './types/FilmType';
 import { history } from '../App';
 
 
@@ -108,4 +108,19 @@ export const themLichChieuAction = (formData) =>{
             console.log(error.response?.data);
         }
     }
+}
+
+export const layThongTinCumRapTheoHeThong = (maHeThongRap) => {
+    return async dispatch => {
+        try{
+            const result = await quanLyPhimService.layThongTinCumRapTheoHeTHong(maHeThongRap);
+            dispatch({
+                type: SET_CHI_TIET_CUM_RAP,
+                danhSachHeThongRap: result.data
+            })
+        }catch(error){
+            console.log('error',error.response?.data);
+        }
+    }
+
 }
